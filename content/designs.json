@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "ecombiz",
+    "title": "Ecombiz ",
+    "category": "UI / UX",
+    "year": "2025",
+    "tools": ["Figma", "Illustrator"],
+    "accent": "lime",
+    "size": "lg",
+    "href": "#",
+    "image": "/images/Design/Ecombiz_poster_placeholder.png"
+  },
+  {
+    "slug": "pulse-dashboard",
+    "title": "Pulse Dashboard",
+    "category": "UI / UX",
+    "year": "2025",
+    "tools": ["Figma", "Framer"],
+    "accent": "pink",
+    "size": "md",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "slug": "terrain-type",
+    "title": "Terrain Typeface",
+    "category": "Typography",
+    "year": "2024",
+    "tools": ["Glyphs", "Illustrator"],
+    "accent": "chalk",
+    "size": "md",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "slug": "arc-identity",
+    "title": "Arc Identity",
+    "category": "Brand Identity",
+    "year": "2024",
+    "tools": ["Figma", "Photoshop"],
+    "accent": "lime",
+    "size": "wide",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80"
+  }
+]

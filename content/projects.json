@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "verve-agency",
+    "title": "Verve Agency",
+    "role": "Creative Direction + Build",
+    "year": "2025",
+    "tags": [
+      "Editorial",
+      "Motion",
+      "GSAP"
+    ],
+    "accent": "lime",
+    "size": "lg",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1545239351-ef35f43d514b?w=1200&auto=format&fit=crop&q=80"
+  },
+  {
+    "slug": "ledger-fi",
+    "title": "Ledger.fi",
+    "role": "Design Engineer",
+    "year": "2024",
+    "tags": [
+      "Fintech",
+      "Dashboard",
+      "Charts"
+    ],
+    "accent": "chalk",
+    "size": "md",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "slug": "object-03",
+    "title": "Object/03",
+    "role": "Immersive 3D Lead",
+    "year": "2024",
+    "tags": [
+      "WebGL",
+      "Three.js",
+      "Shaders"
+    ],
+    "accent": "pink",
+    "size": "md",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "slug": "concrete-and-code",
+    "title": "Concrete & Code",
+    "role": "Brand + Build",
+    "year": "2023",
+    "tags": [
+      "Brutalist",
+      "Identity",
+      "Site"
+    ],
+    "accent": "chalk",
+    "size": "wide",
+    "href": "#",
+    "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&auto=format&fit=crop&q=80"
+  },
+  {
+    "slug": "ecombizai",
+    "title": "ECOMBIZ.AI",
+    "role": "Design and Develop",
+    "year": "2026",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "Zustand",
+      "TanStack Query"
+    ],
+    "accent": "lime",
+    "size": "md",
+    "caseStudy": {
+      "overview": "ECOMBIZ.AI is a SaaS platform for managing inventory,\norders, suppliers, and automation across Amazon,\neBay, Walmart, and Shopify.\n\nAs a Frontend Engineer, I built core features including\ninventory imports, order management, activity feeds,\nauthentication flows, and organization management using\nNext.js, TypeScript, TanStack Query, and Zustand."
+    },
+    "image": "\"D:\\Figma\\Orders.png\""
+  }
+]

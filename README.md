@@ -1,71 +1,107 @@
-# Alex Carter — Portfolio
+# Designer & Developer Portfolio
 
-A dark, editorial **frontend-developer + designer** portfolio. Built with
-**Next.js (App Router) + TypeScript**, animated with **GSAP + ScrollTrigger**,
-styled with **Tailwind CSS**. Fully component-based and content-driven.
+A dark, editorial portfolio for frontend developers and designers. Built with **Next.js 15** (App Router), **TypeScript**, **GSAP** animations, and **Tailwind CSS**. Fully component-based and content-driven — update your data files, not your components.
 
-> All copy/data is placeholder — swap it in the `data/` folder. No component
-> edits needed to change your name, projects, skills, experience, or socials.
+## Tech Stack
 
-## Getting started
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animation:** GSAP + ScrollTrigger
+- **Fonts:** Archivo (display) + JetBrains Mono (monospace) via `next/font`
+
+## Features
+
+- Scroll-driven animations with reduced-motion support
+- Content-driven architecture — all copy lives in `data/` and `content/`
+- Sections: Hero, Designs, Work, About, Skills, Experience, Contact
+- AI chat widget (scripted replies, ready to wire to an LLM)
+- Admin page at `/admin` for managing projects and designs via JSON
+- Case study pages at `/work/[slug]`
+- Dark theme with acid-lime and hot-pink accents
+
+## Getting Started
 
 ```bash
-npm install
-npm run dev      # http://localhost:3000
+pnpm install
+pnpm dev        # http://localhost:3000
 ```
 
-Other scripts: `npm run build`, `npm run start`, `npm run lint`, `npm run typecheck`.
+Other scripts:
 
-## Where to edit your content
+```bash
+pnpm build      # Production build
+pnpm start      # Start production server
+pnpm lint       # Run ESLint
+pnpm typecheck  # Run TypeScript type checking
+```
 
-| File                | Controls                                                |
-| ------------------- | ------------------------------------------------------- |
-| `data/site.ts`      | Name, role, email, nav, socials, hero copy, status bar  |
-| `data/projects.ts`  | Work cards (title, role, year, tags, accent, image)     |
-| `data/about.ts`     | About blurb, stats, marquee, **experience**, contact    |
-| `data/skills.ts`    | The six skill groups                                    |
-| `data/chat.ts`      | Concierge greeting, suggested questions, canned replies |
+## Project Structure
 
-### Adding project / portrait images
+```
+app/
+├── page.tsx                # Main page — assembles all sections
+├── layout.tsx              # Root layout with fonts and metadata
+├── work/[slug]/page.tsx    # Dynamic case study pages
+├── admin/page.tsx          # Content admin panel
+├── api/                    # API routes for projects & designs
+└── globals.css
 
-Drop files in `public/images/` and set the path in the data file, e.g.
-`image: "/images/verve.jpg"`. If left empty, a gradient placeholder renders
-so nothing ever looks broken.
+components/
+├── sections/               # Hero, Work, Designs, About, Skills, Experience, Contact
+├── layout/                 # Navbar, Footer
+├── chat/                   # AI chat widget
+└── ui/                     # Reveal, Marquee, OutlinedText, ProjectCard, etc.
 
-## Design tokens
+data/                       # All site content — edit these to customize
+├── site.ts                 # Name, role, nav, socials, hero copy
+├── projects.ts             # Work project definitions
+├── designs.ts              # Design work definitions
+├── about.ts                # Bio, stats, experience, contact copy
+├── skills.ts               # Skill groups
+└── chat.ts                 # Chat greeting, suggestions, canned replies
 
-Colors, fonts, and animations live in `tailwind.config.ts`:
+content/                    # JSON data files (editable via /admin)
+├── projects.json
+└── designs.json
+```
 
-- `lime` `#c4f82a` — primary accent · `flush` `#ff2e7e` — secondary
-- `ink` — near-black surfaces · `chalk` / `ash` / `smoke` — text tiers
-- Display font: **Archivo** · Mono font: **JetBrains Mono** (loaded via `next/font`)
+## Customization
+
+All content lives in the `data/` folder. No component edits needed to personalize the site.
+
+| File | Controls |
+|---|---|
+| `data/site.ts` | Name, role, email, nav items, socials, hero copy |
+| `data/about.ts` | About blurb, stats, experience roles, contact copy |
+| `data/skills.ts` | Six skill categories rendered as a grid |
+| `data/chat.ts` | Chat greeting, suggested questions, canned replies |
+| `content/projects.json` | Work project cards (also editable via `/admin`) |
+| `content/designs.json` | Design work cards (also editable via `/admin`) |
+
+### Images
+
+Drop files in `public/images/` and reference them in data files (e.g. `"/images/portrait.jpg"`). Empty image paths render a gradient placeholder.
+
+## Design Tokens
+
+Defined in `tailwind.config.ts`:
+
+- **Primary accent:** Lime `#c4f82a`
+- **Secondary accent:** Flush pink `#ff2e7e`
+- **Surfaces:** Ink (near-black with faint green cast)
+- **Text tiers:** Chalk (off-white) → Ash (muted) → Smoke (dimmest)
 
 ## Animation
 
-GSAP is registered once in `lib/gsap.ts`. Reusable pieces:
+GSAP is registered once in `lib/gsap.ts`. Reusable animation components:
 
-- `components/ui/Reveal.tsx` — scroll fade/slide-up wrapper (`stagger` optional)
-- `components/ui/OutlinedText.tsx` — outlined display text with scroll-scrubbed fill
-- `components/ui/Marquee.tsx` — infinite ribbon
+- `Reveal` — scroll-triggered fade/slide-up wrapper with optional stagger
+- `OutlinedText` — display text with scroll-scrubbed fill
+- `Marquee` — infinite horizontal ribbon
 
-All animations are gated behind `prefers-reduced-motion` via `gsap.matchMedia()`.
+All animations respect `prefers-reduced-motion` via `gsap.matchMedia()`.
 
-## Wiring the AI concierge to a real LLM (later)
+## License
 
-The chat is currently a UI shell with scripted replies. To make it live:
-
-1. Add `app/api/chat/route.ts` that calls your model with a system prompt
-   describing Alex.
-2. In `data/chat.ts`, replace the body of `getReply()` with the `fetch("/api/chat")`
-   call shown in the TODO comment there.
-
-The chat UI already awaits `getReply()` and handles loading, so **no component
-changes are required.**
-
-## Notes
-
-- `app/page.tsx` assembles the sections — reorder or remove freely.
-- Section `id`s (`#work`, `#about`, …) match `navItems` hrefs in `data/site.ts`.
-- The contact form is a UI shell; wire a real endpoint in `Contact.tsx`
-  (`handleSubmit`).
-```
+MIT
